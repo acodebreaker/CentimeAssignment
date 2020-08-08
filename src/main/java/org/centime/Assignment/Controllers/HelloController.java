@@ -11,9 +11,9 @@ import static org.centime.Assignment.Constants.ApplicationConstants.HELLO;
 @Controller
 public class HelloController {
 
-@RequestMapping("/hello")
+    @RequestMapping("/hello")
     public ResponseEntity<String> hello() {
-        return new ResponseEntity<>( HELLO ,HttpStatus.OK);
+        return new ResponseEntity<>(HELLO, HttpStatus.OK);
     }
 }
 

@@ -6,10 +6,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.BufferingClientHttpRequestFactory;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import java.util.Collections;
 
 @Configuration
+@EnableWebMvc
 @ComponentScan("org.centime.Assignment")
 public class RestConfig {
 

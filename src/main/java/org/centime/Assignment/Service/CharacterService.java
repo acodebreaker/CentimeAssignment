@@ -1,6 +1,6 @@
 package org.centime.Assignment.Service;
 
-import org.centime.Assignment.Model.Character;
+import org.centime.Assignment.Model.ComicCharacter;
 import org.centime.Assignment.Repository.CharacterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,18 +12,18 @@ public class CharacterService {
 
 
     @Autowired
-    CharacterRepository characterRepository;
+    private CharacterRepository characterRepository;
 
-    public ResponseEntity<String> saveCharacter(Character character) {
+    public ResponseEntity<String> saveCharacter(ComicCharacter comicCharacter) {
         try {
-            characterRepository.save(character);
+            characterRepository.save(comicCharacter);
         } catch (Exception ex) {
-
+            ex.printStackTrace();
+            System.out.println(ex.getMessage());
             return new ResponseEntity<>("Request failed", HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
-        return new ResponseEntity<>("Request failed", HttpStatus.OK);
-
+        return new ResponseEntity<>("Request passed", HttpStatus.OK);
 
     }
 }

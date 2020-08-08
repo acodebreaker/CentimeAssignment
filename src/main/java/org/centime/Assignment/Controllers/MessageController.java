@@ -15,12 +15,12 @@ public class MessageController {
     @Autowired
     private MessageService messageService;
 
-@PostMapping("/message")
-public ResponseEntity<String> message(@RequestBody Person person) {
+    @PostMapping("/message")
+    public ResponseEntity<String> message(@RequestBody Person person) {
 
-    ResponseEntity<String> response= messageService.getMessage(person);
-    String responseString= response.getBody();
-    responseString = responseString +" "+ person.getName() + " " + person.getSurname();
-    return new ResponseEntity<>(responseString,HttpStatus.OK);
-}
+        ResponseEntity<String> response = messageService.getMessage(person);
+        String responseString = response.getBody();
+        responseString = responseString + " " + person.getName() + " " + person.getSurname();
+        return new ResponseEntity<>(responseString, HttpStatus.OK);
+    }
 }

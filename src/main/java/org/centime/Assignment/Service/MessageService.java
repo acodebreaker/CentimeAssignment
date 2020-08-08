@@ -14,12 +14,11 @@ public class MessageService {
     @Autowired
     MessageClient messageClient;
 
-    public ResponseEntity<String> getMessage(Person person){
+    public ResponseEntity<String> getMessage(Person person) {
 
-        ResponseEntity<String> responseEntity= new ResponseEntity<String>( messageClient.getMessage(),HttpStatus.OK);
+        ResponseEntity<String> responseEntity = new ResponseEntity<String>(messageClient.getMessage(), HttpStatus.OK);
         return responseEntity;
-        }
-
+    }
 
 
 }
