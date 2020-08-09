@@ -1,4 +1,4 @@
-swagger UI
+swagger UI:-
 
 http://localhost:8080/swagger-ui.html#/
 
@@ -10,6 +10,8 @@ to run :-
 
 Scripts/run.sh
 
+
+to add and remove data curl scripts are present in script folder
 
 Health Endpoint :-
 
