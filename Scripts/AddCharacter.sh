@@ -4,7 +4,7 @@
 curl --header "Content-Type: application/json" \
   --request POST \
   --data '{
-  	"parentId":1,
+  	"parentId":0,
   	"name" :"Ankit",
   	"color":"Red"
 }' \
