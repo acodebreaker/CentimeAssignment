@@ -5,7 +5,7 @@ curl --header "Content-Type: application/json" \
   --request POST \
   --data '{
   	"parentId":0,
-  	"name" :"Ankit",
-  	"color":"Red"
+  	"name" :"warrior",
+  	"color":"red"
 }' \
 http://localhost:8080/comicCharacter

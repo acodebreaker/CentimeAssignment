@@ -15,3 +15,6 @@ Health Endpoint :-
 
 curl -X GET --header 'Accept: application/json' 'http://localhost:8080/health'
 
+Please use below property to control persistance :-
+
+spring.jpa.hibernate.ddl-auto=create
