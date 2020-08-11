@@ -20,7 +20,7 @@ public class CharacterController {
     @Autowired
     private CharacterService characterService;
 
-    Logger logger = LoggerFactory.getLogger(CharacterRepository.class);
+    private Logger logger = LoggerFactory.getLogger(CharacterRepository.class);
 
     @GetMapping("/comicCharacter")
     public ResponseEntity<String> getAllCharacters() {
@@ -29,7 +29,7 @@ public class CharacterController {
 
     @PostMapping("/comicCharacter")
     public ResponseEntity<String> saveCharacter(@RequestBody ComicCharacter comicCharacter) {
-        logger.info("Request Received for adding character" + comicCharacter );
+        logger.info("Request Received for adding character" + comicCharacter);
         return characterService.saveCharacter(comicCharacter);
     }
 }
