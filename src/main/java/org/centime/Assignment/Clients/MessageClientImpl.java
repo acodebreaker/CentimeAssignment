@@ -2,6 +2,7 @@ package org.centime.Assignment.Clients;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -26,12 +27,13 @@ public class MessageClientImpl implements MessageClient {
 
 
     private final String MDCHeader = "X-Correlation-Id";
+    public static final String DEFAULT_MDC_UUID_TOKEN_KEY = "Slf4jMDCFilter.UUID";
 
     @Override
     public String getMessage() {
-
         HttpHeaders headers = new HttpHeaders();
-        String traceId = UUID.randomUUID().toString();
+        String traceId;
+        traceId= MDC.get(DEFAULT_MDC_UUID_TOKEN_KEY);
         headers.set(MDCHeader, traceId);
 
         logger.info("sending request to get hello with uuid " + traceId);
