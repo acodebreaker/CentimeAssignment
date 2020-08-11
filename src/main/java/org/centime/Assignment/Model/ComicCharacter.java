@@ -24,4 +24,12 @@ public class ComicCharacter {
     String name;
     @Column(name = "color")
     String color;
+
+    @Override
+    public String toString() {
+
+        return " parent id =" + this.parentId + " name = "+ this.name +
+                " color=" + this.color;
+    }
+
 }
